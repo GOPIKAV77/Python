@@ -1,0 +1,100 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/GOPIKAV77/Python/blob/main/python_exercise_7ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Ask the user his/her name and gmail Id. Then asks for the number of tickets he wants and then prints the total cost"
+      ],
+      "metadata": {
+        "id": "NXk6wlm5yS59"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def book_tickets():\n",
+        "\n",
+        "  name = input(\"Enter your name:\")\n",
+        "  while not name.isalpha() or len(name)<=2:\n",
+        "    print(\"Invalid name. The name should not contain numbers and atleast contain more than 2 letters.\")\n",
+        "    name = input(\"Enter your name\")\n",
+        "\n",
+        "  email = input(\"Enter your gmail:\")\n",
+        "  while '@' not in email or '.com' not in email:\n",
+        "    print(\"Invalid gmail\")\n",
+        "    email = input(\"Enter your gmail:\")\n",
+        "\n",
+        "  try:\n",
+        "    print(f\"Welcome {name}\")\n",
+        "    num_tickets = int(input(\"Enter the number of tickets you want:\"))\n",
+        "    while num_tickets <= 0 or num_tickets >100:\n",
+        "      print(\"Invalid input \")\n",
+        "      num_tickets = int(input(\"Enter the number of tickets you want:\"))\n",
+        "\n",
+        "  except ValueError:\n",
+        "    print(\"Please enter a valid number\")\n",
+        "    return\n",
+        "\n",
+        "  ticket_price = 100\n",
+        "  total = ticket_price*num_tickets\n",
+        "\n",
+        "  print(f\"Successfully booked {num_tickets} tickets. and total cost is {total}\")\n",
+        "\n",
+        "book_tickets()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IABbRreussGg",
+        "outputId": "a54fbfa0-05fb-464d-bc23-6d9194183270"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your name:GV77\n",
+            "Invalid name. The name should not contain numbers and atleast contain more than 2 letters.\n",
+            "Enter your nameGopika\n",
+            "Enter your gmail:vgv.com\n",
+            "Invalid gmail\n",
+            "Enter your gmail:gopika@gmail.com\n",
+            "Welcome Gopika\n",
+            "Enter the number of tickets you want:100\n",
+            "Successfully booked 100 tickets. and total cost is 10000\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN2JWD2jKRz2Vs0o7QdGfhT",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
